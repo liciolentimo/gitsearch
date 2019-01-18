@@ -5,6 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes:Routes=[
+  {path:"repository",component:RepositoryComponent},
+  {path:"user",component:UserComponent}
+]
 
 @NgModule({
   declarations: [
@@ -14,6 +20,7 @@ import { RepositoryComponent } from './repository/repository.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     AppRoutingModule
   ],
   providers: [],

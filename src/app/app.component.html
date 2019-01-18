@@ -1,7 +1,18 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<body>
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    {{ title }}
   </h1>
+  <div class="nav">
+    <a routerLink="/repository" routerLinkActive="active">My Profile</a>
+    <a routerLink="/user" routerLinkActive="active">Search User</a>
+  </div>
+  <h1 class="desc">Profile Finder for Github</h1>
+  <p id="details">Check out the profile, followers and more
+  <br>just by entering a username!</p>
+  </div>
+</body>
   
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
