@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes:Routes=[
   {path:"repository",component:RepositoryComponent},
-  {path:"user",component:UserComponent}
+  {path:"user",component:UserComponent},
+  {path:"",redirectTo:"/",pathMatch:"full"},
+  {path:'**',component:NotFoundComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
