@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { RepositoryComponent } from './repository/repository.component';
+// import { UserComponent } from './user/user.component';
+// import { RepositoryComponent } from './repository/repository.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
+//import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileService } from './profile.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DatetimePipe } from './datetime.pipe';
@@ -23,9 +23,9 @@ import { RepoDetailsComponent } from './repo-details/repo-details.component';
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,
-    RepositoryComponent,
-    NotFoundComponent,
+    //UserComponent,
+    //RepositoryComponent,
+    //NotFoundComponent,
     DatetimePipe,
     RepoDetailsComponent
   ],
