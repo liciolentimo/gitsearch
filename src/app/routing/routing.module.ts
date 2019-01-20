@@ -12,8 +12,8 @@ import { AppComponent } from '../app.component';
 const routes:Routes=[
   {path:"repository",component:RepositoryComponent},
   {path:"user",component:UserComponent},
-  {path:"",redirectTo:"/",pathMatch:"full"},
-  {path:'**',component:NotFoundComponent}
+  // {path:"",redirectTo:"/",pathMatch:"full"},
+  // {path:'**',component:NotFoundComponent}
 ]
 
 

@@ -13,12 +13,12 @@ import { DatetimePipe } from './datetime.pipe';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
 
 
-const routes:Routes=[
-  {path:"repository",component:RepositoryComponent},
-  {path:"user",component:UserComponent}
+//const routes:Routes=[
+  //{path:"repository",component:RepositoryComponent},
+  //{path:"user",component:UserComponent}
 //   {path:"",redirectTo:"/",pathMatch:"full"},
 //   {path:'**',component:NotFoundComponent}
-]
+//]
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ const routes:Routes=[
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    //RouterModule.forRoot(routes),
     AppRoutingModule
   ],
   providers: [ProfileService],
