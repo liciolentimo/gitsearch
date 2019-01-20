@@ -7,12 +7,17 @@ import { UserComponent } from './user/user.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProfileService } from './profile.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DatetimePipe } from './datetime.pipe';
+import { RepoDetailsComponent } from './repo-details/repo-details.component';
+
 
 const routes:Routes=[
   {path:"repository",component:RepositoryComponent},
-  {path:"user",component:UserComponent},
-  {path:"",redirectTo:"/",pathMatch:"full"},
-  {path:'**',component:NotFoundComponent}
+  {path:"user",component:UserComponent}
+//   {path:"",redirectTo:"/",pathMatch:"full"},
+//   {path:'**',component:NotFoundComponent}
 ]
 
 @NgModule({
@@ -20,14 +25,17 @@ const routes:Routes=[
     AppComponent,
     UserComponent,
     RepositoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DatetimePipe,
+    RepoDetailsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
