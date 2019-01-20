@@ -6,7 +6,7 @@ export const environment = {
  
   production: false,
   // apiKey="addbdbd1509d13599c0df3ca811a8afdc25a7794"
-  access_token="addbdbd1509d13599c0df3ca811a8afdc25a7794"
+ // access_token="addbdbd1509d13599c0df3ca811a8afdc25a7794"
 };
 
 /*
