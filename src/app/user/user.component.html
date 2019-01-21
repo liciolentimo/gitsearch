@@ -4,12 +4,14 @@
 <p align="center" id="details">Check out the profile, followers and more
 <br>just by entering a username!</p>
 <br>
-
+<form>
 <div  id="searchdiv" class="ui action input">
-  <input name=name type="text" placeholder="Enter username..." required>
+  <input name=name type="text" placeholder="Enter username..." [(ngModel)] = "username" required>
 <button (click)="searchUser()"  class="ui button">Search</button>
 </div>
+</form>
   </div>
+
 
 <div  *ngIf="user">
 <div  *ngIf="user.name !== 'User not found'">
@@ -29,7 +31,7 @@
         </div>
         <div  *ngIf="viewRepo">
           <div class="repo-btn-container text-center mx-5 mt-4">
-            <input type="text" class="mr-2 text-center form-control w-25 d-inline-block" placeholder="Search repository" autocomplete="off" id="repoSearch">
+            <input type="text" class="mr-2 text-center form-control w-25 d-inline-block" placeholder="Search repository"  autocomplete="off" id="repoSearch">
             <button (click)="searchRepo()" class="btn btn-info"><span><i class="fas fa-search"></i></span></button>
             <button class="btn btn-light" (click)="viewAll()" id="viewAll">View All</button>
           </div>

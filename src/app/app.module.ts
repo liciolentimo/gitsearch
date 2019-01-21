@@ -11,6 +11,7 @@ import { ProfileService } from './profile.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DatetimePipe } from './datetime.pipe';
 import { RepoDetailsComponent } from './repo-details/repo-details.component';
+import { FormsModule} from '@angular/forms';
 
 
 const routes:Routes=[
@@ -32,6 +33,7 @@ const routes:Routes=[
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(routes),
     AppRoutingModule
   ],

@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { Repository } from './repository';
 
-// import 'rxjs/add/operator/map';
+ import {map} from 'rxjs/operators';
+import { stringify } from '@angular/core/src/util';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +12,20 @@ import { Repository } from './repository';
 export class ProfileService {
   complete:boolean = false;
 
-  // private username:string;
+  username:string;
+  repos:string;
   // private clientid = 'a427cef0d946c7f7df23';
   // private clientsecret = '9a2bab196c8c42c6984eb0f85c68bcac01e04556';
 
   constructor(private http:HttpClient) { 
     
-  	 console.log("service is now ready!");
-  	// this.username = 'liciolentimo';
+     console.log("service is now ready!");
+    
+    //this.username = '';
+   
   }
 
-  getProfileInfo(name){
+  getProfileInfo(username){
     interface ApiData {
       name:string;
       avatar:string;
@@ -31,7 +35,7 @@ export class ProfileService {
     }
     let user = new User("","",0,0,"","",0,"");
     let promise = new Promise((resolve,reject) => {
-      this.http.get<ApiData>('https://api.github.com/users/liciolentimo?access_token=addbdbd1509d13599c0df3ca811a8afdc25a7794').toPromise().then(data => {
+      this.http.get<ApiData>('https://api.github.com/users/'+ username+  '?access_token=addbdbd1509d13599c0df3ca811a8afdc25a7794').toPromise().then(data => {
         user.name = data["login"];
         user.url = data["html_url"]
         user.created_at = data["created_at"]
@@ -63,8 +67,10 @@ export class ProfileService {
       stars:number
     }
     let repos = [];
+   
+    let repo = new Repository("","",0,0,"","",0);
     let promise = new Promise((resolve,reject) => {
-      this.http.get<ApiData>('https://api.github.com/users/liciolentimo/repos?access_token=addbdbd1509d13599c0df3ca811a8afdc25a7794').toPromise().then(response => {
+      this.http.get<ApiData>('https://api.github.com/users/'+ name +'/repos?access_token=addbdbd1509d13599c0df3ca811a8afdc25a7794').toPromise().then(response => {
         for(let i = 0; i < response["length"];i++) {
           let newRepo = new Repository("","",0,0,"","",0)
           newRepo.name = response[i]["name"];
@@ -82,18 +88,10 @@ export class ProfileService {
     })
     return repos
   }
+}
 
-  	//return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
-  	// .map(res => res.json());
-  }
 
-  //getProfileRepos(name){
-  	//return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
-  	// .map(res => res.json());
-  //}
 
-  //updateProfile(username:string){
-  //	this.username = username;
-  //}
+  
 
 
