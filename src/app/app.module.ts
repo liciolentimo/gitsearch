@@ -17,7 +17,8 @@ import { FormsModule} from '@angular/forms';
 const routes:Routes=[
   {path:"repository",component:RepositoryComponent},
   {path:"user",component:UserComponent},
-  {path:"",redirectTo:"/",pathMatch:"full"},
+  {path:"profile",component:RepoDetailsComponent},
+  {path:"",redirectTo:"/user",pathMatch:"full"},
   {path:'**',component:NotFoundComponent}
 ]
 

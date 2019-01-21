@@ -56,6 +56,39 @@ export class ProfileService {
     return user;
   }
 
+  getMyProfile(username){
+    interface ApiData{
+      name:string;
+      avatar:string;
+      bio:string;
+      followers:number;
+      following:number;
+  }
+  
+
+  let user = new User("","",0,0,"","",0,"");
+  let promise = new Promise(() => {
+    this.http.get<ApiData>('https://api.github.com/users/liciolentimo?access_token=addbdbd1509d13599c0df3ca811a8afdc25a7794').toPromise().then(data => {
+      user.name = data["login"];
+      user.url = data["html_url"]
+      user.created_at = data["created_at"]
+      user.repos = data["public_repos"]
+      user.avatar = data["avatar_url"];
+      user.bio = data["bio"]; 
+      user.followers = data["followers"];
+      user.following = data["following"];
+      // if(data["bio"] === null) {
+      //   user.bio = "Github user"
+      // }
+    //   resolve();
+    // },err => {
+    //   user.name = "User not found";
+    //   reject(err);
+    })
+  })
+  return user;
+}
+
   getRepo(name) {
     interface ApiData {
       name:string;
