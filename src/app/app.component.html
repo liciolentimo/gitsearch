@@ -21,45 +21,32 @@
     <a class="item"  routerLink="/repository" routerLinkActive="active">
       Repositories
     </a>
-    <!-- <div class="right menu">
-      <div class="item">
-        <div class="ui transparent icon input">
-          <input type="text" placeholder="Search users...">
-          <i class="search link icon"></i>
-        </div>
-      </div>
-    </div> -->
+ 
   </div>
-  <router-outlet></router-outlet>
-  <!-- <div class="ui bottom attached segment"> -->
-    <!-- <h1 class="desc">Profile Finder for Github</h1>
-  <p id="details">Check out the profile, followers and more
-  <br>just by entering a username!</p>
-  <br> -->
- <!-- <p></p>
-  </div> -->
+ 
+<router-outlet></router-outlet>
 </div>
-
 <body>
 
-  <!-- <div class="nav">
-    <a routerLink="/repository" routerLinkActive="active"></a>
-    <a routerLink="/user" routerLinkActive="active"></a>
-  </div> -->
-
-  <!-- <h1 class="desc">Profile Finder for Github</h1>
-  <p id="details">Check out the profile, followers and more
-  <br>just by entering a username!</p>
-  <br>
- 
-  <div id="searchdiv" class="ui action input">
-    <input type="text" placeholder="Enter username...">
-  <button (click)="searchUser()"  class="ui button">Search</button>
-</div>
-</div> -->
-
-
-    
+   <!-- <div  *ngIf="user"> -->
+    <!-- <div  *ngIf="user.name !== 'User not found'">
+      <div  id="user-details" *ngIf="user.name.length > 0">  -->
+        <!-- <button class="btn btn-success" (click)="toggleProfile()">My Profile</button> -->
+<!--        
+        <div id="profile" class="row">
+          <img class="ml-0 col-5" src={{user.avatar}} >
+          <div class="col-5 text-left">
+            <p class="repo">Name: <span appBold>{{user.name}}</span></p>
+            <p class="repo">Followers: {{user.followers}}</p>
+            <p class="repo">Following: {{user.following}}</p>
+            <p class="repo">Repos: {{user.repos}}</p>
+            <p class="repo">Bio: {{user.bio}}</p> -->
+            <!-- </div>
+            </div> -->
+            <!-- </div> -->
+            <!-- </div>
+            </div>
+       -->
 </body>
   
 
